@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class Service {
 	List<Shirt> shirts = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
-	
+
+	//Adding some Samples Items
 	public void Load() {
 		shirts.add(new Shirt("Polo  ", "Blue", 2700.00, 34));
 		shirts.add(new Shirt("Polo ", "White", 2200.00, 32));
@@ -88,7 +89,8 @@ public class Service {
 			System.out.println("All Shirts accessed successfully in the price range: form" + minPrice + " to " + maxPrice);
 		}
 	}
-	
+
+	//Access shirts by Price and then on size (if price are same)
 	public void accessShirtsByPriceandSize() {
 		System.out.println("Enter the size :");
 		int size = Integer.parseInt(sc.nextLine());
@@ -119,7 +121,7 @@ public class Service {
 			}
 			System.out.println("Shirts sorted by size from low to high successfully");
 	}
-
+	//Sorting by size High to Low
 	public void sortSizeHightoLow() {
 		List<Shirt> temp = new ArrayList<>(shirts);
 		temp.sort(Comparator.comparingInt((Shirt s) -> s.size).reversed());
@@ -130,6 +132,7 @@ public class Service {
 		
 	}
 
+	//Sorting on Brand and then Price Low to High (if brands are same)
 	public void sortOnBrandLowToHigh() {
 		List<Shirt> temp = new ArrayList<>(shirts);
 		temp.sort(Comparator.comparing(s -> s.brand));
@@ -139,6 +142,7 @@ public class Service {
 		System.out.println("Shirts sorted by brand from low to high successfully.");
 	}
 
+	//Sorting on Brand and then Price High to Low (if brands are same)
 	public void sortOnBrandHighToLow() {
 		List<Shirt> temp = new ArrayList<>(shirts);
 		temp.sort(Comparator.comparing((Shirt s) -> s.brand).reversed());
@@ -148,6 +152,7 @@ public class Service {
 		System.out.println("Shirts sorted by brand from high to low successfully.");
 	}
 
+	//Sorting on price Low to High and if price are same then sort on size Low to High
 	public void sortOnPriceLowToHighAndIfPriceIsSameThenSortOnSizeLowToHigh() {
 		List<Shirt> temp = new ArrayList<>(shirts);
 		temp.sort(Comparator.comparing((Shirt s) -> s.price).thenComparingInt(s -> s.size));
@@ -157,6 +162,7 @@ public class Service {
 		System.out.println("Shirts sorted by price from low to high successfully.");
 	}
 
+	// Viewing all Brands
 	public void listAllBrands() {
 		List<String> brands = new ArrayList<>();
 		for(Shirt s: shirts) {
@@ -165,7 +171,4 @@ public class Service {
 		}
 		System.out.println("All brands are :"+brands);
 	}
-	
-	
-	
 }
