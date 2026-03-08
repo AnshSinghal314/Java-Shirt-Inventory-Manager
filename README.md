@@ -1,5 +1,6 @@
-"# Shirt Inventory Management System" 
+"# Shirt Inventory Management System | Java"  
 
-This is a Java console application built using the Java Collection Framework.
-It allows users to add shirts, view shirts, filter by brand/price/size,
-and perform sorting using Comparator.
+• Developed a console-based inventory system implementing CRUD operations for shirt records.
+• Utilized Java Collection Framework (ArrayList) for efficient data storage and manipulation.
+• Implemented filtering and multi-level sorting using Comparator and Lambda expressions.
+• Applied OOP principles to build a modular and maintainable application.
